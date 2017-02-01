@@ -1,0 +1,38 @@
+---
+title: "ADS Project1"
+author: "Qingyuan Zhang"
+date: "1/30/2017"
+output: pdf_document
+---
+
+```{r, message=FALSE, warning=FALSE}
+### Inauguaral speeches
+main.page <- read_html(x = "http://www.presidency.ucsb.edu/inaugurals.php")
+# Get link URLs
+# f.speechlinks is a function for extracting links from the list of speeches. 
+inaug=f.speechlinks(main.page)
+#head(inaug)
+as.Date(inaug[,1], format="%B %e, %Y")
+inaug=inaug[-nrow(inaug),] # remove the last line, irrelevant due to error.
+# The inauglist contains information of 45 presidents' inauguration address length,
+# term and date
+inaug.list=read.csv("../data/inauglist.csv", stringsAsFactors = FALSE)
+inaug.list=cbind(inaug.list, inaug)
+
+inaug.list$fulltext=NA
+for(i in seq(nrow(inaug.list))) {
+  text <- read_html(inaug.list$urls[i]) %>% # load the page
+    html_nodes(".displaytext") %>% # isloate the text
+    html_text() # get the text
+  inaug.list$fulltext[i]=text
+  # Create the file name
+  filename <- paste0("../data/fulltext/", 
+                     inaug.list$type[i],
+                     inaug.list$File[i], "-", 
+                     inaug.list$Term[i], ".txt")
+  sink(file = filename) %>% # open file to write 
+  cat(text)  # write the file
+  sink() # close the file
+}
+```
+
