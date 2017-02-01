@@ -125,3 +125,32 @@ json <- createJSON(phi = InaugReviews$phi,
                    vocab = InaugReviews$vocab, 
                    term.frequency = InaugReviews$term.frequency)
 serVis(json, out.dir = 'vis', open.browser = FALSE)
+
+
+
+
+library(shiny)
+
+ui <- shinyUI(
+  fluidPage(
+    sliderInput("nTerms", "Number of terms to display", min = 20, max = 40, value = 30),
+    visOutput('myChart')
+  )
+)
+
+server <- shinyServer(function(input, output, session) {
+  output$myChart <- renderVis({
+    if(!is.null(input$nTerms)){
+      with(InaugReviews, 
+           createJSON(phi, theta, doc.length, vocab, term.frequency, 
+                      R = input$nTerms))
+    } 
+  })
+})
+
+shinyApp(ui = ui, server = server)
+
+
+
+
+
