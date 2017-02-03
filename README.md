@@ -15,7 +15,7 @@ Term: Spring 2017
 topic modeling and word cloud onto 58 inauguration speeches, and has some
 interesting finding on our 45th President Trump. The final report is under doc folder.
 You can easily reproduce the report by cloning this repository onto your own
-local machine and rerun everything in the doc folder.
+local machine and rerun everything in the `doc` folder.
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
 
