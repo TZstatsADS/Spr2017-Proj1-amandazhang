@@ -9,7 +9,7 @@ This is the first and only *individual* (as opposed to *team*) this semester.
 Term: Spring 2017
 
 + Project title: How Inauguration Evolve Through Time?
-+ This project is conducted by Qingyuan Zhang
++ This project is conducted by Qingyuan Zhang ([`amandazhang`](https://github.com/amandazhang))
 
 + Project summary: This project applies text mining and NLP skills such as 
 topic modeling and word cloud onto 58 inauguration speeches, and has some
