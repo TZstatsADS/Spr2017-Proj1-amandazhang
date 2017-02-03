@@ -3,6 +3,8 @@ library(wordcloud)
 library(RColorBrewer)
 library(dplyr)
 library(tidytext)
+library(lda)
+library(LDAvis)
 
 folder.path="../data/InauguralSpeeches/"
 speeches=list.files(path = folder.path, pattern = "*.txt")
@@ -62,4 +64,4 @@ for(i in 1:length(speeches)){
             main=prez.out[i])
   dev.off()
   
-  }
+}
