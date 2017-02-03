@@ -80,7 +80,7 @@ main.page <- read_html(x = "http://www.presidency.ucsb.edu/inaugurals.php")
 # f.speechlinks is a function for extracting links from the list of speeches. 
 inaug=f.speechlinks(main.page)
 #head(inaug)
-as.Date(inaug[,1], format="%B %e, %Y")
+#as.Date(inaug[,1], format="%B %e, %Y")
 inaug=inaug[-nrow(inaug),] # remove the last line, irrelevant due to error.
 # The inauglist contains information of 45 presidents' inauguration address length,
 # term and date
@@ -299,9 +299,9 @@ shinyApp(
 ```
 
 # How the internet and social media change our president's inaugural?
-![Trump's Tweet](../figs/Tweeting.jpg)
+![Trump's Tweet](Tweeting.jpg)
 
-![Stop Tweeeting Trump](../figs/batmanslap.jpg)
+![Stop Tweeeting Trump](batmanslap.jpg)
 
 
 Well, I guess everyone gets some sense of how social media changes the way people communicates. @POTUS is the official twitter account used by president, (and yes, we also have @FLOTUS run by the first lady). After Trump taking office at the White House, people all notice that he still insisting on keeping his personal twitter handle @realdonaldtrump and not using the @POTUS. Some commentators consider this as a sign that he is continuing on building his "personal brand" instead of speaking from "the office of the president".
@@ -458,10 +458,16 @@ Then, back to our 45th President of the United States. From the plot we can get 
 
 ### It was uniquely Trumpian.
 
+
 As he did during the campaign, Trump repurposed several famous phrases with tangled historical resonance and made them his own: "America first" and "forgotten man."
 
+Regarding to the immigration ban... Trump actually mentioned it in his inauguration speech, 
+"From this day forward, a new vision will govern our land.
+From this day forward, it's going to be only America First. America first.
+Every decision on trade, on taxes, on immigration, on foreign affairs, will be made to benefit American workers and American families.
+We must protect our borders from the ravages of other countries making our products, stealing our companies, and destroying our jobs."
 
-
+That's all I want to talk with you about our president's inauguration speeches. Okay, does the output of this report meet your expectation on some questions regarding our presidents?
 
 
 
